@@ -4,13 +4,17 @@ syntax on
 "colorscheme archman
 "colorscheme badwolf
 colorscheme xcodedark
+"colorscheme darkspace
 "filetype plugin indent on
 set termguicolors
 syntax enable
 set number relativenumber
 set background=dark
+let g:airline_theme='darkspace'
 
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+" Debug command - F10 prints the syntax catagory of the word the curser is on.
+map <F10> :echo "
+\hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
@@ -20,9 +24,14 @@ set incsearch
 set tabstop=4
 set shiftwidth=4
 imap jk <Esc>
+map , :let @/=""<CR>
+
+" Colomn at end-of-line
 set textwidth=80
 set cc+=81
-hi ColorColumn guibg=#2d2d2d ctermbg=246
+hi ColorColumn guibg=#4d4d4d ctermbg=246
+
+" some nice defaults for random file types
 autocmd BufRead,BufNewFile   *.tex set spell spelllang=en_us
 autocmd BufRead,BufNewFile   *.md set spell spelllang=en_us textwidth=80
 autocmd BufRead,BufNewFile   *.html set softtabstop=2 expandtab shiftwidth=2
@@ -35,14 +44,7 @@ autocmd BufRead,BufNewFile   *.hs set softtabstop=2 expandtab shiftwidth=2
 set cursorline
 set wildmenu
 set showmatch
-let mapleader=","
-
-"call plug#begin('~/.vim/plugged')
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'jelera/vim-javascript-syntax'
-"Plug 'othree/yajs.vim'
-"Plug 'vim-airline/vim-airline'
-"call plug#end()
+let mapleader="\\"
 
 " Function call highlighting
  syn match dFunction "\zs\(\k\w*\)*\s*\ze("
@@ -81,10 +83,6 @@ imap <buffer> ((     \eqref{
 
 let LatexBox_output_type = "pdf"
 
-" if filereadable("~/.vim/coc-vimrc")
-"	source ~/.vim/coc-vimrc
-" endif
-
 " *** coc - nvim ***
 
 " if hidden is not set, TextEdit might fail.
@@ -95,7 +93,7 @@ set nobackup
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+" set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300

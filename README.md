@@ -1,6 +1,7 @@
 # Dotvim
 
 My personal Vim configuration.
+Based on https://github.com/jojonium/dotvim
 
 ## Installation:
 
@@ -12,6 +13,7 @@ $ git clone https://github.com/jojonium/dotvim.git ~/.vim
 
 ```
 $ ln -s ~/.vim/vimrc ~/.vimrc
+$ ln -s ~/.vim/coc-settings.json coc-settings.json
 ```
 
 ### Update submodules:
