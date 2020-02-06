@@ -1,16 +1,14 @@
 syntax on
+"let g:atomic_mode = 7
+"colorscheme atomic
 "colorscheme archman
 "colorscheme badwolf
-"colorscheme xcodedark
+colorscheme xcodedark
 "filetype plugin indent on
 set termguicolors
 syntax enable
 set number relativenumber
-let g:atomic_mode = 7
 set background=dark
-colorscheme atomic
-
-call <SID>X("javaScriptFutureKeys", "c397d8", "", "")
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
