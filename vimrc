@@ -1,7 +1,21 @@
 syntax on
+"colorscheme archman
 "colorscheme badwolf
-colorscheme xcodedark
-filetype plugin indent on
+"colorscheme xcodedark
+"filetype plugin indent on
+set termguicolors
+syntax enable
+set number relativenumber
+let g:atomic_mode = 7
+set background=dark
+colorscheme atomic
+
+call <SID>X("javaScriptFutureKeys", "c397d8", "", "")
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 set number relativenumber
 set hlsearch
 set incsearch
@@ -19,6 +33,7 @@ autocmd BufRead,BufNewFile   *.js set softtabstop=2 expandtab shiftwidth=2
 autocmd BufRead,BufNewFile   *.ts set softtabstop=2 expandtab shiftwidth=2
 autocmd BufRead,BufNewFile   *.json set softtabstop=2 expandtab shiftwidth=2
 autocmd BufRead,BufNewFile   *.hs set softtabstop=2 expandtab shiftwidth=2
+
 set cursorline
 set wildmenu
 set showmatch
@@ -32,8 +47,8 @@ let mapleader=","
 "call plug#end()
 
 " Function call highlighting
-syn match dFunction "\zs\(\k\w*\)*\s*\ze("
-hi link dFunction Function
+ syn match dFunction "\zs\(\k\w*\)*\s*\ze("
+ hi link dFunction Function
 
 " Allows the 'crosshair' on the cursor
 set cursorline
@@ -48,6 +63,7 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 " let g:netrw_browse_split = 4
 " let g:netrw_altv = 1
+let g:netrw_chgwin=1
 let g:netrw_winsize = 25
 
 nnoremap <leader><space> :nohlsearch<CR>
