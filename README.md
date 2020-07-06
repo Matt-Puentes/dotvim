@@ -6,7 +6,7 @@ Based on https://github.com/jojonium/dotvim
 ## Installation:
 
 ```
-$ git clone https://github.com/jojonium/dotvim.git ~/.vim
+$ git clone https://github.com/Matt-Puentes/dotvim.git ~/.vim
 ```
 
 ### Create symlinks:
