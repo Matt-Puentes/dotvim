@@ -10,7 +10,8 @@ set termguicolors
 syntax enable
 set number relativenumber
 set background=dark
-let g:airline_theme='darkspace'
+"let g:airline_theme='darkspace'
+let g:airline_theme='atomic'
 
 " Debug command - F10 prints the syntax catagory of the word the curser is on.
 map <F10> :echo "
